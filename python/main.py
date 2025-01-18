@@ -239,7 +239,7 @@ class PPO(object):
 				nan_occur = False
 				terminated_state = True
 
-				if np.any(np.isnan(states[j])) or np.any(np.isnan(actions[j])) or np.any(np.isnan(states[j])) or np.any(np.isnan(values[j])) or np.any(np.isnan(logprobs[j])):
+				if np.any(np.isnan(states[j])) or np.any(np.isnan(actions[j])) or np.any(np.isnan(values[j])) or np.any(np.isnan(logprobs[j])):
 					nan_occur = True
 				
 				elif self.env.IsEndOfEpisode(j) is False:
