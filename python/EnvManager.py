@@ -81,6 +81,9 @@ class EnvManager:
         for id in range(self._mNumEnvs):
             self._mEnvs[id].Reset(RSI)
     
+    def Reset(self, RSI, j):
+        self._mEnvs[j].Reset(RSI)
+    
     def IsEndOfEpisodes(self):
         for id in range(self._mNumEnvs):
             self._mEos[id] = self._mEnvs[id].IsEndOfEpisode()
