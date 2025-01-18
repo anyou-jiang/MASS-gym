@@ -66,7 +66,11 @@ class MuscleNN(nn.Module):
 		muscle_tau = muscle_tau/self.std_muscle_tau
 
 		tau = tau/self.std_tau
-		out = self.fc.forward(torch.cat([muscle_tau,tau],dim=1))
+		#print(muscle_tau)
+		#print(tau)
+		tmp = torch.cat([muscle_tau,tau],dim=-1)
+		#print(tmp)
+		out = self.fc.forward(tmp)
 		return out		
 
 	def load(self,path):
