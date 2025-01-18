@@ -306,6 +306,9 @@ class Environment:
         v *= 0.2
         state = np.concatenate((p, v, phi))
         return state
+
+    def SetMotion(self, m):
+        self.SetAction(m)
     
     def SetAction(self, a):
         self._mAction = a * 0.1
